@@ -1,4 +1,4 @@
-# dpaddungeon
+# DPad Dungeon
 2020 GMTK Summer Jam
 
 The code here was all written within 48 hours for the GMTK Summer Game Jam 2020 (July 10th - July 13th). 
