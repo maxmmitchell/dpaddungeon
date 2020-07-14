@@ -29,6 +29,12 @@ public class Key : MonoBehaviour
         }
 
         alive = true;
+
+        // a and b buttons start dead!
+        if (name.Substring(0, 1) == "A" || name.Substring(0, 1) == "B")
+        {
+            Die();
+        }
     }
 
     public void Press()
@@ -38,7 +44,14 @@ public class Key : MonoBehaviour
 
     public void Release()
     {
-        sprite.sprite = aliveSprite;
+        if (alive)
+        {
+            sprite.sprite = aliveSprite;
+        }
+        else
+        {
+            sprite.sprite = deadSprite;
+        }
     }
 
     public void Die()
@@ -50,12 +63,29 @@ public class Key : MonoBehaviour
 
     public void Revive()
     {
-        alive = true;
-        sprite.sprite = aliveSprite;
-        GetComponent<Collider2D>().enabled = true;
+        if (!alive)
+        {
+            alive = true;
+            sprite.sprite = aliveSprite;
+            GetComponent<Collider2D>().enabled = true;
+
+            // takes into account if recharged or not
+            if (GetComponentInParent<PlayerCombat>())
+            {
+                if (name.Substring(0, 1) == "B" && GetComponentInParent<PlayerCombat>().shielding)
+                {
+                    Press();
+                }
+                else if (name.Substring(0, 1) == "A" && GetComponentInParent<PlayerCombat>().shooting)
+                {
+                    Press();
+                }
+            }
+            
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (alive)
         {

@@ -40,7 +40,8 @@ public class PlayerMovement : MonoBehaviour
         // if holding down this key when it dies
         else if (direction.x < 0)
         {
-            direction.x = 0;
+            //direction.x = 0;
+            ReleaseKey(health.Left, Vector2.right);
         }
 
 
@@ -58,7 +59,8 @@ public class PlayerMovement : MonoBehaviour
         // if holding down this key when it dies
         else if (direction.x > 0)
         {
-            direction.x = 0;
+            //direction.x = 0;
+            ReleaseKey(health.Right, Vector2.left);
         }
 
 
@@ -76,7 +78,8 @@ public class PlayerMovement : MonoBehaviour
         // if holding down this key when it dies
         else if (direction.y > 0)
         {
-            direction.y = 0;
+            //direction.y = 0;
+            ReleaseKey(health.Up, Vector2.down);
         }
 
 
@@ -94,7 +97,8 @@ public class PlayerMovement : MonoBehaviour
         // if holding down this key when it dies
         else if (direction.y < 0)
         {
-            direction.y = 0;
+            //direction.y = 0;
+            ReleaseKey(health.Down, Vector2.up);
         }
 
     }
