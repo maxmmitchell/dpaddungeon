@@ -6,3 +6,5 @@ Battery.cs was written by Max Lama. All other code written by Max Mitchell.
 The edition of Battery.cs found outside the folders is the version written by Max Lama, and the edition
 inside the Scripts/Enemies folders is a version edited by Max Mitchell, and used in the original release of the game.
 Find the most recent edition of the game here: https://maxmitchell.itch.io/dpad-dungeon
+
+All code Copyright 2020 to the respective authors (Max Mitchell and Max Lama).
